@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+cra/node_modules
+/.pnp
+cra/.pnp.js
+
+# testing
+cra/coverage
+
+# production
+cra/build
+
+# misc
+cra/.DS_Store
+cra/.env.local
+cra/.env.development.local
+cra/.env.test.local
+cra/.env.production.local
+
+cra/npm-debug.log*
+cra/yarn-debug.log*
+cra/yarn-error.log*
+
+flask/venv
