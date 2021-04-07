@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const CardAa = ({setCardType}) => {
     const [cardAa, setCardAa] = useState({});
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState('');
 
   useEffect(() => {
     fetch('/api').then(response => {
@@ -34,21 +34,25 @@ const CardAa = ({setCardType}) => {
     });
   }
     return (
-        <div className="card bg-dark text-white">
-            <div className="card-body p-5">
-              <h2>{cardAa.text}</h2>
-              {cardAa.message && <span className="text-danger">{cardAa.message}</span>}
-              <input 
-                type="text"
-                name="age"
-                value={age}
-                onChange={e => setAge(e.target.value)}
-                className="form-control mt-3"
-              />
+        <div className="card bg-dark text-white" style={{height: "100%", border:"unset"}}>
+            <div className="card-body mt-5">
+              <div className="row">
+                <div className="col-md-6 offset-md-3">
+                  <h2>{cardAa.text}</h2>
+                  {cardAa.message && <span className="text-danger">{cardAa.message}</span>}
+                  <input 
+                    type="text"
+                    name="age"
+                    value={age}
+                    onChange={e => setAge(e.target.value)}
+                    className="form-control mt-3"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="card-footer d-flex justify-content-between">
-              <button className="btn btn-outline-dark text-white"> Back </button>
-              <button className="btn btn-outline-dark text-white" onClick={e=>onSubmitClick(e)}> Send </button>
+            <div className="d-flex justify-content-between mb-2">
+              <button className="btn btn-outline-dark text-white btn-lg" style={{backgroundColor: "#2f3a78"}}> Back </button>
+              <button className="btn btn-outline-dark text-white btn-lg" onClick={e=>onSubmitClick(e)} style={{backgroundColor: "#2f3a78"}}> Send </button>
             </div>
         </div>
     )
